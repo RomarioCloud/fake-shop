@@ -49,9 +49,6 @@ jobs:
       - name: Configurar o kubectl
         run: aws eks update-kubeconfig --name aula-eks2
 
-
-        
-
       - name: Deploy do manifesto no Kubernetes
         uses: Azure/k8s-deploy@v5
         with:
