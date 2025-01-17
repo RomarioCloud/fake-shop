@@ -47,12 +47,12 @@ jobs:
           aws-region: us-east-2
 
       - name: Configurar o kubectl
-        run: aws eks update-kubeconfig --name aula-eks2
+        run: aws eks update-kubeconfig --name aula-k8s
 
       - name: Deploy do manifesto no Kubernetes
         uses: Azure/k8s-deploy@v5
         with:
            manifests: |
-              ./k8s/deploymente.yaml
+              ./k8s/deployment.yaml
            images: |
               romarionex88/fake-shop:v${{ github.run_number }}
